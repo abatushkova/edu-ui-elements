@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+
+.ui__nav {
+  display: flex;
+  width: 100%;
+  max-width: 76rem;
+  border-radius: 25px;
+  background-color: $primary-50;
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,.3), 0px 1px 3px 1px rgba(0,0,0,.15);
+  }
+}
+
+.ui__nav-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 24px;
+  border-radius: 25px;
+  color: $gray-4;
+  font: 500 1.6rem/2.4rem a;
+  font-family: inherit;
+
+  &:not(.is-active):focus,
+  &:not(.is-active):hover {
+    background-color: $primary-30;
+    color: $gray-1;
+  }
+  &.is-active {
+    background-color: $primary;
+    color: $gray-1;
+  }
+}
