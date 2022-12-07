@@ -1,6 +1,19 @@
+@use 'sass:math';
+
 $primary: #86b0c4;
 $primary-30: #aac8d6;
 $primary-50: #c3d8e2;
 $white: #fff;
 $gray-1: #111;
 $gray-4: #444;
+
+$desktop-1: 76rem;
+$size-24: 24px;
+$size-16: 16px;
+$size-8: 8px;
+$size-4: 4px;
+
+$button-50: 50px;
+$button-40: 40px;
+$radius-25: #{math.div($button-50, 2)};
+$radius-20: #{math.div($button-40, 2)};

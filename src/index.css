@@ -128,7 +128,7 @@ a {
 
 .icon {
   fill: currentColor;
-  font-size: 8rem;
+  font-size: 2.4rem;
 }
 .icon__body {
   display: block;
@@ -140,19 +140,22 @@ a {
 }
 
 .ui__nav {
+  position: sticky;
+  top: 8px;
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  .ui__nav {
+    display: block;
+  }
+}
+
+.ui__nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  max-width: 76rem;
   border-radius: 25px;
   background-color: #c3d8e2;
-}
-.ui__nav.is-fixed {
-  position: fixed;
-  top: 0;
-  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
 .ui__nav-link {
@@ -184,7 +187,38 @@ a {
   color: #111;
 }
 
-.ui {
+@media only screen and (min-width: 1024px) {
+  .ui__sidebar {
+    display: none;
+  }
+}
+.ui__sidebar::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.32);
+  opacity: 0;
+  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), width 100ms cubic-bezier(0.4, 0, 0.2, 1) 200ms, height 100ms cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), width 100ms cubic-bezier(0.4, 0, 0.2, 1) 200ms, height 100ms cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+  will-change: opacity;
+}
+.ui__sidebar.is-open::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ui__sidebar-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,12 +226,92 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 320px;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #c3d8e2;
+  border-radius: 0 16px 16px 0;
+  -webkit-transform: translateX(-320px);
+          transform: translateX(-320px);
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.2, 0, 0, 1);
+  transition: -webkit-transform 300ms cubic-bezier(0.2, 0, 0, 1);
+  transition: transform 300ms cubic-bezier(0.2, 0, 0, 1);
+  transition: transform 300ms cubic-bezier(0.2, 0, 0, 1), -webkit-transform 300ms cubic-bezier(0.2, 0, 0, 1);
+}
+.ui__sidebar.is-open .ui__sidebar-list {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
+.ui__sidebar-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  padding: 0 16px;
+  border-radius: 25px;
+  color: #444;
+  font: 500 1.6rem/2.4rem a;
+  font-family: inherit;
+}
+.ui__sidebar-link:not(.is-active):focus, .ui__sidebar-link:not(.is-active):hover {
+  background-color: #aac8d6;
+  color: #111;
+}
+.ui__sidebar-link.is-active {
+  background-color: #86b0c4;
+  color: #111;
+}
+
+.ui__sidebar-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #444;
+}
+.ui__sidebar-button:focus, .ui__sidebar-button:hover {
+  background-color: #aac8d6;
+  color: #111;
+}
+
+.ui__sidebar-open {
+  position: fixed;
+  top: 8px;
+  z-index: 1;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+  background-color: #c3d8e2;
+}
+@media only screen and (min-width: 1024px) {
+  .ui__sidebar-open {
+    display: none;
+  }
+}
+
+.ui__sidebar-close {
+  margin: 0 4px 8px;
+}
+
+.ui {
   max-width: 76rem;
-  height: 100%;
+  padding: 8px 8px 50px;
   margin: 0 auto;
 }
 .ui__header {
-  margin: 8px 0;
+  margin-bottom: 8px;
 }
 .ui__figure {
   border-radius: 24px;
