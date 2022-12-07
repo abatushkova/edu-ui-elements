@@ -2,8 +2,6 @@
 
 .ui__nav {
   display: flex;
-  width: 100%;
-  max-width: 76rem;
   border-radius: 25px;
   background-color: $primary-50;
   &.is-fixed {
