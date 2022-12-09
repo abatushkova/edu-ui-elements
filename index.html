@@ -18,21 +18,21 @@
   <link rel="stylesheet" href="./src/index.min.css">
 </head>
 <body>
-  <div id="wrapper" class="ui">
+  <div class="ui">
     <header id="header" class="ui__header">
       <figure class="ui__figure">
         <img src="./src/images/bg.jpg" alt="Mountain lake" class="ui__poster">
       </figure>
     </header>
-    <button type="button" id="openSidebar" class="ui__sidebar-button ui__sidebar-open">
+    <button type="button" id="openSidebar" class="button button--round ui__sidebar-button ui__sidebar-open" data-target="sidebar">
       <span class="visually-hidden">Open sidebar</span>
       <span class="icon" aria-hidden="true">
         <svg class="icon__body" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
       </span>
     </button>
-    <aside id="sidebar" class="ui__sidebar">
-      <div id="sidebarList" class="ui__sidebar-list">
-        <button type="button" id="closeSidebar" class="ui__sidebar-button ui__sidebar-close">
+    <aside id="sidebar" class="overlay ui__sidebar">
+      <div id="sidebarList" class="ui__sidebar-content">
+        <button type="button" id="closeSidebar" class="button button--round ui__sidebar-button ui__sidebar-close" data-target="sidebar">
           <span class="visually-hidden">Close sidebar</span>
           <span class="icon" aria-hidden="true">
             <svg class="icon__body" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"/></svg>
@@ -53,7 +53,41 @@
       </div>
     </nav>
     <main>
-      <p style="font-size: 2.2rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vero laborum aut consequuntur ut? A rerum voluptatem ut adipisci temporibus assumenda quaerat eveniet ipsa? Iure, aut ipsam? Iusto mollitia necessitatibus corrupti perferendis. Magni porro aliquam beatae numquam maxime modi velit blanditiis commodi, accusantium quaerat unde, saepe voluptas necessitatibus reprehenderit in vero repellendus reiciendis consequatur minus explicabo. Magni deserunt a suscipit doloremque velit omnis quod, quisquam, mollitia dolore et ipsa maxime labore sunt iste autem alias consectetur. Cumque obcaecati cum nam itaque impedit exercitationem fugit, tempore perspiciatis hic odit voluptatum debitis et, eligendi rem error, culpa non in porro enim iure a ex ducimus nostrum corrupti. Iusto sunt sint necessitatibus vel, libero earum sit expedita optio, doloribus laudantium rerum amet quod voluptatum perferendis fugit voluptate vero aliquam eos eligendi quasi, delectus dicta ratione. Nemo sapiente architecto mollitia consequatur velit eaque adipisci impedit quas. Optio mollitia omnis deleniti velit. Vel distinctio voluptatibus similique inventore id, quis reiciendis consectetur, facilis qui deleniti hic tenetur eius, dolorem cumque quas voluptates. Expedita quo voluptatibus fuga quis, dolores id laudantium beatae repellat ad facilis, soluta veritatis laboriosam voluptates temporibus tenetur nihil illo labore, fugit rerum? Eaque qui dicta, optio quae soluta labore nemo explicabo deleniti recusandae.</p>
+      <section class="ui__section">
+        <h1 class="title">UI Elements</h1>
+        <p class="text">Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <p class="text">Foundations inform the basis of any great user interface, from accessibility standards to essential patterns for layout and interaction.</p>
+        <p class="text">Styles are the visual aspects of a UI that give it a distinct look and feel. They can be customized by changing your Material theme.</p>
+        <p class="text">Components are interactive building blocks for creating a user interface. They can be organized into five categories based on their purpose: Action, containment, navigation, selection, and text input.</p>
+        <h2 class="subtitle">Buttons</h2>
+        <p class="text">When choosing the right button for an action, consider the level of emphasis each button type provides.</p>
+        <p class="text"><b>Primary action button</b></p>
+        <p class="text">Each screen should contain a single prominent button for the primary action. This high-emphasis button commands the most attention. The arrangement of on-screen elements should clearly communicate that other buttons are less important.</p>
+        <p class="text"><b>Other buttons</b></p>
+        <p class="text">A product can show more than one button at a time in a layout. When using multiple buttons, ensure the available state of one button does not resemble the disabled state of another.</p>
+        <h2 class="subtitle">Tabs</h2>
+        <p class="text">
+          Tabs organize content across different screens, data sets, and other interactions.<br>
+          Tabs are useful for switching between views of distinct and related groups of information. There are two types of tabs: primary and secondary.
+        </p>
+      </section>
+      <section class="ui__section">
+        <button type="button" id="openModal" class="button button--filled ui__modal-open" data-target="modal">Open Modal</button>
+        <div id="modal" class="overlay ui__modal">
+          <div class="ui__modal-content">
+            <button type="button" id="closeModal" class="button button--round ui__modal-close" data-target="modal">
+              <span class="visually-hidden">Close Modal</span>
+              <span class="icon" aria-hidden="true">
+                <svg class="icon__body" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+              </span>
+            </button>
+            <p class="text">
+              Dialogs provide important prompts in a user flow.<br>
+              Dialogs can require an action, communicate information, or help users accomplish a task. There are two types of dialogs: basic and full-screen.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
