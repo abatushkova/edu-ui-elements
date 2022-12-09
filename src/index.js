@@ -4,6 +4,9 @@ const navbar = document.querySelector('#nav');
 const sidebar = document.querySelector('#sidebar');
 const openSidebarBtn = document.querySelector('#openSidebar');
 const closeSidebarBtn = document.querySelector('#closeSidebar');
+const modal = document.querySelector('#modal');
+const openModalBtn = document.querySelector('#openModal');
+const closeModalBtn = document.querySelector('#closeModal');
 let activeLink = null;
 
 const highlightActiveLink = (link) => {
@@ -34,23 +37,25 @@ const setActiveLink = (e) => {
 //   }
 // };
 
-const openSidebar = () => {
-  sidebar.classList.add('is-open');
+const toggleOverlay = (e) => {
+  const target = e.target.dataset.target;
+  const overlay = document.getElementById(target);
+
+  overlay.classList.toggle('is-open');
 };
 
-const closeSidebar = () => {
-  sidebar.classList.remove('is-open');
-}
-
-const closeModal = (e) => {
+const closeOverlay = (e) => {
   const target = e.target;
 
-  if (target == sidebar) closeSidebar();
-  if (target.closest('#closeSidebar')) closeSidebar();
-};
+  if (target === sidebar || target === modal) {
+    target.classList.remove('is-open');
+  }
+}
 
 navbar.addEventListener('click', setActiveLink);
 // window.addEventListener('scroll', toggleFixedNavbar);
-openSidebarBtn.addEventListener('click', openSidebar);
-closeSidebarBtn.addEventListener('click', closeModal);
-window.addEventListener('click', closeModal);
+openSidebarBtn.addEventListener('click', toggleOverlay);
+closeSidebarBtn.addEventListener('click', toggleOverlay);
+openModalBtn.addEventListener('click', toggleOverlay);
+closeModalBtn.addEventListener('click', toggleOverlay);
+window.addEventListener('click', closeOverlay);
