@@ -12,7 +12,7 @@
 
 .ui__nav-list {
   display: flex;
-  border-radius: $radius-25;
+  border-radius: 32px;
   background-color: $primary-50;
 }
 
@@ -21,9 +21,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: $button-50;
+  height: 64px;
   padding: 0 $size-24;
-  border-radius: $radius-25;
+  border-radius: 32px;
   color: $gray-4;
   font: 500 1.6rem/2.4rem a;
   font-family: inherit;

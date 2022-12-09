@@ -1,6 +1,7 @@
 .icon {
   fill: currentColor;
   font-size: 2.4rem;
+  pointer-events: none;
 
   &__body {
     display: block;

@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  box-sizing: border-box;
+  font: 500 1.6rem/2.4rem a;
+  font-family: inherit;
+
+  &--round {
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  &--filled {
+    width: auto;
+    padding: 0 $size-24;
+    border-radius: 25px;
+  }
+}

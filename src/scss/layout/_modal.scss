@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+
+.ui__modal-content {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 320px;
+  padding: 24px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background-color: $white;
+  text-align: center;
+  transform: translate(-100%, -50%);
+  transition: transform 300ms cubic-bezier(0.2, 0, 0, 1),
+    left 300ms cubic-bezier(0.2, 0, 0, 1);
+  .overlay.is-open & {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+.ui__modal-open {
+  margin: 32px auto;
+  color: $white;
+  background-color: $green;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  &:focus,
+  &:hover {
+    background-color: $green-hovered
+  }
+  &:active {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
+}
+
+.ui__modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0);
+  color: $gray-4;
+  &:focus,
+  &:hover {
+    background-color: $gray-e;
+    color: $gray-1;
+  }
+}
