@@ -20,7 +20,7 @@
 <body>
   <div class="ui">
     <header id="header" class="ui__header">
-      <figure class="ui__figure">
+      <figure class="ui__picture">
         <img src="./src/images/bg.jpg" alt="Mountain lake" class="ui__poster">
       </figure>
     </header>
@@ -31,47 +31,73 @@
       </span>
     </button>
     <aside id="sidebar" class="overlay ui__sidebar">
-      <div id="sidebarList" class="ui__sidebar-content">
+      <div class="ui__sidebar-content">
         <button type="button" id="closeSidebar" class="button button--round ui__sidebar-button ui__sidebar-close" data-target="sidebar">
           <span class="visually-hidden">Close sidebar</span>
           <span class="icon" aria-hidden="true">
             <svg class="icon__body" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"/></svg>
           </span>
         </button>
-        <a href="#" class="ui__sidebar-link">Home</a>
-        <a href="#" class="ui__sidebar-link">About</a>
-        <a href="#" class="ui__sidebar-link">Images</a>
-        <a href="#" class="ui__sidebar-link">Locations</a>
+        <a href="/" class="ui__sidebar-link">Home</a>
+        <a href="/" class="ui__sidebar-link">Develop</a>
+        <a href="/" class="ui__sidebar-link">Blog</a>
+        <a href="/" class="ui__sidebar-link">Contacts</a>
       </div>
     </aside>
     <nav id="nav" class="ui__nav">
       <div class="ui__nav-list">
-        <a href="#" class="ui__nav-link">Home</a>
-        <a href="#" class="ui__nav-link">About</a>
-        <a href="#" class="ui__nav-link">Images</a>
-        <a href="#" class="ui__nav-link">Locations</a>
+        <a href="/" class="ui__nav-link">Home</a>
+        <a href="/" class="ui__nav-link">Develop</a>
+        <a href="/" class="ui__nav-link">Blog</a>
+        <a href="/" class="ui__nav-link">Contacts</a>
       </div>
     </nav>
     <main>
       <section class="ui__section">
-        <h1 class="title">UI Elements</h1>
+        <h1 class="headline">UI Design</h1>
+        <h2 class="title">Styles</h2>
+        <ul class="ui__list">
+          <li class="ui__list-item">
+            <a href="#color">Color</a>
+          </li>
+          <li class="ui__list-item">
+            <a href="#shape">Shape</a>
+          </li>
+          <li class="ui__list-item">
+            <a href="#typography">Typography</a>
+          </li>
+        </ul>
         <p class="text">Material Design is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material Design streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
         <p class="text">Foundations inform the basis of any great user interface, from accessibility standards to essential patterns for layout and interaction.</p>
         <p class="text">Styles are the visual aspects of a UI that give it a distinct look and feel. They can be customized by changing your Material theme.</p>
         <p class="text">Components are interactive building blocks for creating a user interface. They can be organized into five categories based on their purpose: Action, containment, navigation, selection, and text input.</p>
-        <h2 class="subtitle">Buttons</h2>
-        <p class="text">When choosing the right button for an action, consider the level of emphasis each button type provides.</p>
-        <p class="text"><b>Primary action button</b></p>
-        <p class="text">Each screen should contain a single prominent button for the primary action. This high-emphasis button commands the most attention. The arrangement of on-screen elements should clearly communicate that other buttons are less important.</p>
-        <p class="text"><b>Other buttons</b></p>
-        <p class="text">A product can show more than one button at a time in a layout. When using multiple buttons, ensure the available state of one button does not resemble the disabled state of another.</p>
-        <h2 class="subtitle">Tabs</h2>
+        <h3 id="color" class="subtitle">Color</h3>
+        <p class="text">Color is used to express style and communicate meaning. With dynamic color, Material puts personal color preferences and individual needs at the forefront of systematic color application.</p>
+        <p class="text"><b>Dynamic color</b></p>
         <p class="text">
-          Tabs organize content across different screens, data sets, and other interactions.<br>
-          Tabs are useful for switching between views of distinct and related groups of information. There are two types of tabs: primary and secondary.
+          Dynamic color describes the capability of variable color sources to remap system UI and in-app color experiences.<br>
+          The color system enables apps to respond to user preferences and dynamic conditions, such as wallpaper selection or in-app content (such as music and video thumbnail art.)
         </p>
+        <p class="text"><b>Design tokens</b></p>
+        <p class="text">
+          Design tokens enable flexibility and consistency across a product by allowing designers to assign an element's color role in a UI, rather than a set value.<br>
+          Tokens act as a bridge between an element's assigned role and the chosen color value for a role. With the addition of tokens, designing for relationships of elements is more fundamental than selecting specific colors.
+        </p>
+        <h3 id="shape" class="subtitle">Shape</h3>
+        <p class="text">The shape scale defines the style of container corners, offering a range of roundedness from square to fully circular.</p>
+        <p class="text">Circular or pill shaped components use the fully rounded corner style rather than a fixed mapping to ½ of the dp value of the component. This ensures the shape remains circular even if the component scales.</p>
+        <p class="text">The default shape family is rounded.</p>
+        <p class="text">By default, shape styles are applied symmetrically on all corners, but asymmetric styles can be defined for a container’s corners at top, bottom, start, or end.</p>
+        <h3 id="typography" class="subtitle">Typography</h3>
+        <p class="text">Use typography to make writing legible and beautiful. Material's default type scale includes contrasting and flexible styles to support a wide range of use cases.</p>
+        <p class="text">When different sizes from the defaults are needed, such as for different devices, you can customize the type scale by adding or removing styles, and even swapping out Roboto for a font of your choice.</p>
+        <p class="text">Material Design uses the Major Second type scale with 14 as its key base size. This anchors to the most essential style used most often for typesetting body text.</p>
       </section>
       <section class="ui__section">
+        <h2 class="title">Components</h2>
+        <h3 class="subtitle">Dialogs</h3>
+        <p class="text">Dialogs provide important prompts in a user flow.</p>
+        <p class="text">Dialogs can require an action, communicate information, or help users accomplish a task. There are two types of dialogs: basic and full-screen.</p>
         <button type="button" id="openModal" class="button button--filled ui__modal-open" data-target="modal">Open Modal</button>
         <div id="modal" class="overlay ui__modal">
           <div class="ui__modal-content">
@@ -85,6 +111,35 @@
               Dialogs provide important prompts in a user flow.<br>
               Dialogs can require an action, communicate information, or help users accomplish a task. There are two types of dialogs: basic and full-screen.
             </p>
+          </div>
+        </div>
+        <h3 class="subtitle">Tabs</h3>
+        <p class="text">Tabs organize content across different screens, data sets, and other interactions.</p>
+        <div id="tabs" class="ui__tabs">
+          <div class="ui__tabs-control">
+            <button type="button" class="ui__tabs-button is-active" data-id="music">Music</button>
+            <button type="button" class="ui__tabs-button" data-id="cinema">Cinema</button>
+            <button type="button" class="ui__tabs-button" data-id="theatre">Theatre</button>
+          </div>
+          <div class="ui__tabs-content">
+            <div id="music" class="ui__tabs-item is-active">
+              <figure class="ui__tabs-picture">
+                <img src="./src/images/music.jpg" alt="" class="ui__tabs-poster">
+              </figure>
+              <p class="text ui__tabs-text">Music is generally defined as the art of arranging sound to create some combination of form, harmony, melody, rhythm or otherwise expressive content. Exact definitions of music vary considerably around the world, though it is an aspect of all human societies, a cultural universal. While scholars agree that music is defined by a few specific elements, there is no consensus on their precise definitions. The creation of music is commonly divided into musical composition, musical improvisation, and musical performance.</p>
+            </div>
+            <div id="cinema" class="ui__tabs-item">
+              <figure class="ui__tabs-picture">
+                <img src="./src/images/cinema.jpg" alt="" class="ui__tabs-poster">
+              </figure>
+              <p class="text ui__tabs-text">The film industry or motion picture industry comprises the technological and commercial institutions of filmmaking, i.e., film production companies, film studios, cinematography, animation, film production, screenwriting, pre-production, post production, film festivals, distribution, and actors. Though the expense involved in making films almost immediately led film production to concentrate under the auspices of standing production companies, advances in affordable filmmaking equipment.</p>
+            </div>
+            <div id="theatre" class="ui__tabs-item">
+              <figure class="ui__tabs-picture">
+                <img src="./src/images/theatre.jpg" alt="" class="ui__tabs-poster">
+              </figure>
+              <p class="text ui__tabs-text">Theatre or theater is a collaborative form of performing art that uses live performers, usually actors or actresses, to present the experience of a real or imagined event before a live audience in a specific place, often a stage. The performers may communicate this experience to the audience through combinations of gesture, speech, song, music, and dance. Elements of art, such as painted scenery and stagecraft such as lighting are used to enhance the physicality, presence and immediacy of the experience.</p>
+            </div>
           </div>
         </div>
       </section>
