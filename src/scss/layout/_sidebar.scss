@@ -13,7 +13,7 @@
   height: 100%;
   padding: $size-8;
   box-sizing: border-box;
-  background-color: $primary-50;
+  background-color: $primary;
   border-radius: 0 $size-16 $size-16 0;
   transform: translateX(-320px);
   transition: transform 300ms cubic-bezier(0.2, 0, 0, 1);
@@ -33,11 +33,11 @@
   font-family: inherit;
   &:not(.is-active):focus,
   &:not(.is-active):hover {
-    background-color: $primary-30;
+    background-color: $primary-hovered;
     color: $gray-1;
   }
   &.is-active {
-    background-color: $primary;
+    background-color: $primary-active;
     color: $gray-1;
   }
 }
@@ -46,7 +46,7 @@
   color: $gray-4;
   &:focus,
   &:hover {
-    background-color: $primary-30;
+    background-color: $primary-hovered;
     color: $gray-1;
   }
 }
@@ -56,7 +56,11 @@
   top: $size-8;
   z-index: 1;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3), 0 1px 3px 1px rgba(0, 0, 0, .15);
-  background-color: $primary-50;
+  background-color: $primary-active;
+  &:focus,
+  &:hover {
+    background-color: $primary-active;
+  }
   @include desktop {
     display: none;
   }

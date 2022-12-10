@@ -9,12 +9,35 @@
     margin-bottom: $size-8;
   }
 
-  &__figure {
+  &__picture {
     border-radius: $size-24;
     overflow: hidden;
   }
 
   &__poster {
     aspect-ratio: 16 / 9;
+  }
+
+  &__list {
+    padding-left: 20px;
+    margin-bottom: 4rem;
+    color: $green;
+    font: 500 1.6rem/2.4rem a;
+    font-family: inherit;
+  }
+
+  &__list-item {
+    position: relative;
+    margin-bottom: 1em;
+    &::before {
+      content: '\2726';
+      position: absolute;
+      top: 0;
+      left: -20px;
+    }
+  }
+
+  &__list-item a:hover {
+    color: $green-hovered;
   }
 }

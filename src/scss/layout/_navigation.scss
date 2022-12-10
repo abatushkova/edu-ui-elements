@@ -4,6 +4,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: $size-8;
+  z-index: 1;
   display: none;
   @include desktop {
     display: block;
@@ -13,7 +14,8 @@
 .ui__nav-list {
   display: flex;
   border-radius: 32px;
-  background-color: $primary-50;
+  background-color: $primary;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3), 0 1px 3px 1px rgba(0, 0, 0, .15);
 }
 
 .ui__nav-link {
@@ -29,11 +31,11 @@
   font-family: inherit;
   &:not(.is-active):focus,
   &:not(.is-active):hover {
-    background-color: $primary-30;
+    background-color: $primary-hovered;
     color: $gray-1;
   }
   &.is-active {
-    background-color: $primary;
+    background-color: $primary-active;
     color: $gray-1;
   }
 }

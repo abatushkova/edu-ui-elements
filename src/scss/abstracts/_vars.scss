@@ -1,14 +1,18 @@
 @use 'sass:math';
 
-$primary: #86b0c4;
-$primary-30: #aac8d6;
-$primary-50: #c3d8e2;
+$primary: #f8fafd;
+$primary-hovered: #eaecef;
+$primary-active: #c2e7fe;
 $white: #fff;
 $gray-1: #111;
 $gray-4: #444;
+$gray-c: #ccc;
 $gray-e: #eee;
-$green: #19686a;
-$green-hovered: #478688;
+$green: #55a630;
+$green-hovered: #448526;
+$ocean: #19686a;
+$ocean-hovered: #478688;
+$color-surface: #e1e3e1;
 
 $desktop-1: 76rem;
 $size-24: 24px;

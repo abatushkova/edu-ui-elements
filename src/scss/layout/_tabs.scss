@@ -1,0 +1,67 @@
+@use '../abstracts' as *;
+
+.ui__tabs {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  margin: 32px 0;
+  border: 1px solid $color-surface;
+  border-radius: $size-24;
+  background-color: $white;
+  overflow: hidden;
+}
+
+.ui__tabs-control {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ui__tabs-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font: 500 1.6rem/2.4rem a;
+  font-family: inherit;
+  transition:
+    background-color 300ms cubic-bezier(0.2, 0, 0, 1),
+    color 300ms cubic-bezier(0.2, 0, 0, 1);
+
+  &:not(.is-active) {
+    color: $gray-4;
+    background-color: $gray-c;
+  }
+  &:not(.is-active):focus,
+  &:not(.is-active):hover {
+    background-color: $primary-active;
+    color: $gray-1;
+  }
+}
+
+.ui__tabs-item {
+  display: none;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  padding: $size-24;
+  @include tablet {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  &.is-active {
+    display: flex;
+  }
+}
+
+.ui__tabs-picture {
+  flex-shrink: 0;
+  width: 70%;
+  @include tablet {
+    width: 40%;
+    margin-right: $size-24;
+  }
+}
+
+.ui__tabs-poster {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
