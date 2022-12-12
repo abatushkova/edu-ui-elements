@@ -21,7 +21,7 @@
   &__list {
     padding-left: 20px;
     margin-bottom: 4rem;
-    color: $green;
+    color: $color-green;
     font: 500 1.6rem/2.4rem a;
     font-family: inherit;
   }
@@ -38,6 +38,6 @@
   }
 
   &__list-item a:hover {
-    color: $green-hovered;
+    color: $color-on-green;
   }
 }

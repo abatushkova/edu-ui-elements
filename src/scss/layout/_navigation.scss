@@ -14,7 +14,7 @@
 .ui__nav-list {
   display: flex;
   border-radius: 32px;
-  background-color: $primary;
+  background-color: $color-surface-1;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3), 0 1px 3px 1px rgba(0, 0, 0, .15);
 }
 
@@ -31,11 +31,12 @@
   font-family: inherit;
   &:not(.is-active):focus,
   &:not(.is-active):hover {
-    background-color: $primary-hovered;
+    background-color: $color-on-surface-1;
     color: $gray-1;
   }
   &.is-active {
-    background-color: $primary-active;
+    background-color: $color-blue;
     color: $gray-1;
+    cursor: default;
   }
 }
