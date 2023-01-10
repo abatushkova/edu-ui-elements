@@ -1,0 +1,8 @@
+@use '../abstracts';
+
+.accordion {
+  padding: $size-24;
+  border: 1px solid $color-surface-2;
+  border-radius: $size-24;
+  background-color: $color-on-surface-1;
+}

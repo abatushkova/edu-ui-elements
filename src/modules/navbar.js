@@ -15,7 +15,7 @@ export const setActiveLink = (e) => {
   e.preventDefault();
   const target = e.target;
 
-  if (target.tagName != 'A') return;
+  if (target.tagName !== 'A') return;
 
   highlightActiveLink(target);
 };
