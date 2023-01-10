@@ -1,34 +1,58 @@
 @use '../abstracts' as *;
 
 .ui__nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: $size-8;
-  z-index: 1;
-  display: none;
   @include desktop {
-    display: block;
+    position: -webkit-sticky;
+    position: sticky;
+    top: $size-8;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0);
+    opacity: 1;
   }
 }
 
-.ui__nav-list {
+.ui__nav-content {
   display: flex;
-  border-radius: 32px;
+  flex-direction: column;
+  border-radius: 0 $size-16 $size-16 0;
   background-color: $color-surface-1;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3), 0 1px 3px 1px rgba(0, 0, 0, .15);
+  @include touch {
+    width: 320px;
+    height: 100%;
+    padding: $size-8;
+    box-sizing: border-box;
+    transform: translateX(-320px);
+    transition: transform 300ms cubic-bezier(0.2, 0, 0, 1);
+  }
+  @include desktop {
+    flex-direction: row;
+    border-radius: 32px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3), 0 1px 3px 1px rgba(0, 0, 0, .15);
+  }
+  .overlay.is-open & {
+    @include touch {
+      transform: translate(0);
+    }
+  }
 }
 
 .ui__nav-link {
-  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 64px;
+  height: 50px;
   padding: 0 $size-24;
-  border-radius: 32px;
+  border-radius: 25px;
   color: $gray-4;
   font: 500 1.6rem/2.4rem a;
   font-family: inherit;
+  @include desktop {
+    flex: 1;
+    justify-content: center;
+    height: 64px;
+    border-radius: 32px;
+  }
   &:not(.is-active):focus,
   &:not(.is-active):hover {
     background-color: $color-on-surface-1;
@@ -39,4 +63,32 @@
     color: $gray-1;
     cursor: default;
   }
+}
+
+.ui__navbar-button {
+  color: $gray-4;
+  &:focus,
+  &:hover {
+    background-color: $color-on-surface-1;
+    color: $gray-1;
+  }
+  @include desktop {
+    display: none;
+  }
+}
+
+.ui__navbar-open {
+  position: fixed;
+  top: $size-8;
+  z-index: 1;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3), 0 1px 3px 1px rgba(0, 0, 0, .15);
+  background-color: $color-blue;
+  &:focus,
+  &:hover {
+    background-color: $color-on-blue;
+  }
+}
+
+.ui__navbar-close {
+  margin-bottom: $size-8;
 }

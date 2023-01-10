@@ -1,5 +1,5 @@
 const modal = document.querySelector('#modal');
-const sidebar = document.querySelector('#sidebar');
+const navbar = document.querySelector('#navbar');
 
 export const toggleOverlay = (e) => {
   const target = e.target.dataset.target;
@@ -11,7 +11,7 @@ export const toggleOverlay = (e) => {
 export const closeOverlay = (e) => {
   const target = e.target;
 
-  if (target === sidebar || target === modal) {
+  if (target === navbar || target === modal) {
     target.classList.remove('is-open');
   }
 };

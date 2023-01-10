@@ -1,8 +1,15 @@
 $tablet-view: #{'only screen and (min-width: 769px)'};
+$touch-view: #{'only screen and (max-width: 1023px)'};
 $desktop-view: #{'only screen and (min-width: 1024px)'};
 
 @mixin tablet {
   @media #{$tablet-view} {
+    @content;
+  }
+}
+
+@mixin touch {
+  @media #{$touch-view} {
     @content;
   }
 }
