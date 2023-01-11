@@ -1,37 +1,45 @@
 $theme-light: #f2f230;
 $theme-dark: #fa810f;
+$transparent: rgba(255, 255, 255, 0);
 $white: #fff;
-$gray-1: #111;
+$white-c: #c4c7c5;
+$gray-1: #1f1f1f;
+$gray-2: #2c2f31;
 $gray-4: #444;
-$gray-c: #ccc;
-$gray-e: #eee;
 $color-surface-1: #f8fafd;
 $color-on-surface-1: #eaecef;
-$color-surface-2: #e1e3e1;
-$color-blue: #c2e7fe;
-$color-on-blue: #b6d8ed;
+$color-blue-light: #c2e7fe;
+$color-blue-dark: #014a76;
 $color-green: #55a630;
 $color-on-green: #448526;
-$color-ocean: #19686a;
-$color-on-ocean: #478688;
-$color-indigo: #224870;
+$color-purple-light: #E9D2F4;
+$color-purple-dark: #571F4E;
 
 $desktop-1: 76rem;
 $size-24: 24px;
 $size-16: 16px;
 $size-8: 8px;
-$size-4: 4px;
 
 html[data-theme="light"] {
   --color-text: #{$gray-1};
+  --color-text-pre-hover: #{$gray-4};
   --color-background: #{$white};
+  --color-surface: #{$color-surface-1};
+  --color-on-surface: #{$color-on-surface-1};
+  --color-purple: #{$color-purple-light};
+  --color-blue: #{$color-blue-light};
   --icon-src: url('./icons/dark.svg');
   --icon-background: #{$theme-light};
 }
 
 html[data-theme="dark"] {
   --color-text: #{$white};
+  --color-text-pre-hover: #{$white-c};
   --color-background: #{$gray-1};
+  --color-surface: #{$gray-2};
+  --color-on-surface: #{$gray-4};
+  --color-purple: #{$color-purple-dark};
+  --color-blue: #{$color-blue-dark};
   --icon-src: url('./icons/light.svg');
   --icon-background: #{$theme-dark};
 }
