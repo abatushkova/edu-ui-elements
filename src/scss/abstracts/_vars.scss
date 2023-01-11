@@ -1,3 +1,5 @@
+$theme-light: #f2f230;
+$theme-dark: #fa810f;
 $white: #fff;
 $gray-1: #111;
 $gray-4: #444;
@@ -19,3 +21,17 @@ $size-24: 24px;
 $size-16: 16px;
 $size-8: 8px;
 $size-4: 4px;
+
+html[data-theme="light"] {
+  --color-text: #{$gray-1};
+  --color-background: #{$white};
+  --icon-src: url('./icons/dark.svg');
+  --icon-background: #{$theme-light};
+}
+
+html[data-theme="dark"] {
+  --color-text: #{$white};
+  --color-background: #{$gray-1};
+  --icon-src: url('./icons/light.svg');
+  --icon-background: #{$theme-dark};
+}

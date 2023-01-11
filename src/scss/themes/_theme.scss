@@ -1,0 +1,23 @@
+.ui__theme {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui__theme-label {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: var(--icon-src);
+  background-position: center;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-color: var(--icon-background);
+  transition: transform 300ms cubic-bezier(0.2, 0, 0, 1);
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
