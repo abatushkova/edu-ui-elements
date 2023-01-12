@@ -1,23 +1,24 @@
 .ui__theme {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .ui__theme-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-image: var(--icon-src);
-  background-position: center;
-  background-size: 24px;
-  background-repeat: no-repeat;
-  background-color: var(--icon-background);
+  background-color: var(--color-purple);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3), 0 1px 3px 1px rgba(0, 0, 0, .15);
   transition: transform 300ms cubic-bezier(0.2, 0, 0, 1);
   cursor: pointer;
   &:hover {
     transform: scale(1.2);
+  }
+  &:active {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   }
 }
