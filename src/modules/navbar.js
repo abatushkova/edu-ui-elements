@@ -1,5 +1,3 @@
-// const header = document.querySelector('#header');
-// const topOfNavbar = navbar.offsetTop;
 let activeLink = document.querySelector('.ui__nav-link.is-active');
 
 const highlightActiveLink = (link) => {

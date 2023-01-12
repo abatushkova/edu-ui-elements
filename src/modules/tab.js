@@ -1,5 +1,4 @@
-const tabsBtns = document.querySelectorAll('.ui__tabs-button');
-const tabsItems = document.querySelectorAll('.ui__tabs-item');
+import { tabsBtns, tabsItems } from "../utils/constants.js";
 
 const highlightActiveTab = (btn, id) => {
   tabsBtns.forEach(btn => btn.classList.remove('is-active'));

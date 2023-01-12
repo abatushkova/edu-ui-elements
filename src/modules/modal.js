@@ -1,5 +1,4 @@
-const modal = document.querySelector('#modal');
-const navbar = document.querySelector('#navbar');
+import { navbar, modal } from "../utils/constants.js";
 
 export const toggleOverlay = (e) => {
   const target = e.target.dataset.target;
